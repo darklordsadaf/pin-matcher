@@ -115,11 +115,15 @@
 
         document.getElementById('clear').addEventListener('click', function(){
               document.getElementById('enterPinDisplay').value = "";
+
+              document.getElementById("notMatch").style.display = "none";
         })
 
         document.getElementById('backSpace').addEventListener('click', function(){
             const enterPinValue = document.getElementById('enterPinDisplay').value;
             document.getElementById('enterPinDisplay').value = enterPinValue.substr(0, enterPinValue.length - 1);
+            
+            document.getElementById("notMatch").style.display = "none";
         })
         
         
