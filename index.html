@@ -43,7 +43,7 @@
                             </div>
                             <div>
                                 <button id="submit" type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <p class="action-left"><span id="try">3</span> try left</p>
                             </div>
                     </div>
                 </div>
@@ -137,6 +137,13 @@
             }
             else{
                 document.getElementById("notMatch").style.display = "inline-block";
+
+                const tryValue = document.getElementById("try").innerText;
+                const decreaseValue = tryValue - 1;
+                document.getElementById("try").innerText = decreaseValue;
+                if(decreaseValue == 0){
+                    document.getElementById('submit').disabled = true;
+                }
             }
         })
     </script>
